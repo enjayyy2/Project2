@@ -70,25 +70,5 @@
             </Columns>
             <PagerStyle CssClass="pagination-ys" />
         </asp:GridView>
-
-
-        <!-- GridView untuk Menampilkan Data Transaksi -->
-        <h3 class="mt-5">Riwayat Transaksi</h3>
-        <asp:GridView ID="GridViewTransaksi" runat="server" CssClass="table table-bordered table-striped"
-            AutoGenerateColumns="False" OnRowCommand="GridViewTransaksi_RowCommand">
-            <Columns>
-                <asp:BoundField DataField="ID" HeaderText="ID" />
-                <asp:BoundField DataField="Username" HeaderText="Username" />
-                <asp:BoundField DataField="ProductCode" HeaderText="Kode Produk" />
-                <asp:BoundField DataField="Quantity" HeaderText="Jumlah" />
-                <asp:BoundField DataField="TransDate" HeaderText="Tanggal Transaksi" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}" />
-                <asp:TemplateField HeaderText="Aksi">
-                    <ItemTemplate>
-                        <asp:Button ID="btnHapusTransaksi" runat="server" Text="Hapus" CssClass="btn btn-danger btn-sm"
-                            CommandName="Hapus" CommandArgument='<%# Eval("ID") %>' />
-                    </ItemTemplate>
-                </asp:TemplateField>
-            </Columns>
-        </asp:GridView>
     </div>
 </asp:Content>

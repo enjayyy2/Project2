@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -15,6 +16,7 @@ namespace Project2
         {
             if (!IsPostBack)
             {
+                LoadDataTransaksi();
                 GenerateNomorTransaksi();
                 if (Session["username"] == null)
                 {
@@ -160,5 +162,46 @@ namespace Project2
             txtSubtotal.Text = "";
         }
 
+        protected void GridViewTransaksi_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Hapus")
+            {
+                string transNumber = e.CommandArgument.ToString();
+
+                // Buat koneksi ke database
+                string connString = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    conn.Open();
+                    string query = "DELETE FROM dbo.ProdukTransaksi WHERE ID = @ID";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@ID", transNumber);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                // Refresh GridView setelah penghapusan
+                LoadDataTransaksi();
+            }
+        }
+
+        private void LoadDataTransaksi()
+        {
+            string connString = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                conn.Open();
+                string query = "SELECT * FROM dbo.ProdukTransaksi";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    GridViewTransaksi.DataSource = dt;
+                    GridViewTransaksi.DataBind();
+                }
+            }
+        }
     }
 }

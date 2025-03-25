@@ -2,10 +2,10 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container mt-4">
-    <h2 class="text-center">
-        Manajemen Produk - <asp:Label ID="lblUsername" runat="server" CssClass="text-black"></asp:Label>
-        <a href="Logout.aspx" class="btn btn-danger">Logout</a>
-    </h2>
+        <h2 class="text-center">Manajemen Produk -
+            <asp:Label ID="lblUsername" runat="server" CssClass="text-black"></asp:Label>
+            <a href="Logout.aspx" class="btn btn-danger">Logout</a>
+        </h2>
 
         <!-- Form Nomor Transaksi -->
         <div class="card p-4 mb-4">
@@ -56,6 +56,23 @@
                 <asp:Button ID="btnFinish" runat="server" Text="Finish" CssClass="btn btn-success" OnClick="btnFinish_Click" />
             </div>
         </div>
+        <h3 class="mt-5">Riwayat Transaksi</h3>
+        <asp:GridView ID="GridViewTransaksi" runat="server" CssClass="table table-bordered table-striped"
+            AutoGenerateColumns="False" OnRowCommand="GridViewTransaksi_RowCommand">
+            <Columns>
+                <asp:BoundField DataField="ID" HeaderText="ID" />
+                <asp:BoundField DataField="Username" HeaderText="Username" />
+                <asp:BoundField DataField="ProductCode" HeaderText="Kode Produk" />
+                <asp:BoundField DataField="Quantity" HeaderText="Jumlah" />
+                <asp:BoundField DataField="TransDate" HeaderText="Tanggal Transaksi" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}" />
+                <asp:TemplateField HeaderText="Aksi">
+                    <ItemTemplate>
+                        <asp:Button ID="btnHapusTransaksi" runat="server" Text="Hapus" CssClass="btn btn-danger btn-sm"
+                            CommandName="Hapus" CommandArgument='<%# Eval("ID") %>' />
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
+        </asp:GridView>
     </div>
 </asp:Content>
 
