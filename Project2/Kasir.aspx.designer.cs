@@ -11,7 +11,7 @@ namespace Project2
 {
 
 
-    public partial class Produk
+    public partial class Kasir
     {
 
         /// <summary>
@@ -24,93 +24,75 @@ namespace Project2
         protected global::System.Web.UI.WebControls.Label lblUsername;
 
         /// <summary>
-        /// txtKode control.
+        /// txtNomorTransaksi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtKode;
+        protected global::System.Web.UI.WebControls.TextBox txtNomorTransaksi;
 
         /// <summary>
-        /// txtNama control.
+        /// txtKodeProduk control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNama;
+        protected global::System.Web.UI.WebControls.TextBox txtKodeProduk;
 
         /// <summary>
-        /// fileUploadGambar control.
+        /// btnCariProduk control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fileUploadGambar;
+        protected global::System.Web.UI.WebControls.Button btnCariProduk;
 
         /// <summary>
-        /// txtHarga control.
+        /// txtNamaProduk control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHarga;
+        protected global::System.Web.UI.WebControls.TextBox txtNamaProduk;
 
         /// <summary>
-        /// txtStok control.
+        /// txtHargaProduk control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStok;
+        protected global::System.Web.UI.WebControls.TextBox txtHargaProduk;
 
         /// <summary>
-        /// btnTambah control.
+        /// txtJumlahPembelian control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnTambah;
+        protected global::System.Web.UI.WebControls.TextBox txtJumlahPembelian;
 
         /// <summary>
-        /// btnEdit control.
+        /// txtSubtotal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEdit;
+        protected global::System.Web.UI.WebControls.TextBox txtSubtotal;
 
         /// <summary>
-        /// btnHapus control.
+        /// btnFinish control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnHapus;
-
-        /// <summary>
-        /// GridViewProduk control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewProduk;
-
-        /// <summary>
-        /// GridViewTransaksi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewTransaksi;
+        protected global::System.Web.UI.WebControls.Button btnFinish;
     }
 }

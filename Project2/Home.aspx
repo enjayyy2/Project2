@@ -9,35 +9,41 @@
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <style>
-        .carousel-inner img {
-            max-height: 450px; /* Sesuaikan tinggi maksimum */
-            width: 100%;
-            object-fit: contain; /* Menampilkan seluruh gambar tanpa pemotongan */
-            background-color: #f8f9fa;
-        }
-    </style>
     <div class="container mt-4">
-        <!-- Kontainer Carousel -->
-        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="image/carousel1.jpeg" class="d-block w-100" alt="Slide 1">
+        <h2 class="text-center">Selamat Berbelanja -
+            <asp:Label ID="lblUsername" runat="server" CssClass="text-black"></asp:Label>
+            <a href="Logout.aspx" class="btn btn-danger">Logout</a>
+        </h2>
+    </div>
+        <style>
+            .carousel-inner img {
+                max-height: 450px; /* Sesuaikan tinggi maksimum */
+                width: 100%;
+                object-fit: contain; /* Menampilkan seluruh gambar tanpa pemotongan */
+                background-color: #f8f9fa;
+            }
+        </style>
+        <div class="container mt-4">
+            <!-- Kontainer Carousel -->
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="image/carousel1.jpeg" class="d-block w-100" alt="Slide 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="image/carousel2.jpeg" class="d-block w-100" alt="Slide 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="image/carousel3.jpeg" class="d-block w-100" alt="Slide 3">
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="image/carousel2.jpeg" class="d-block w-100" alt="Slide 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="image/carousel3.jpeg" class="d-block w-100" alt="Slide 3">
-                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </button>
-        </div>
         </div>
 
         <!-- Kontainer Produk -->

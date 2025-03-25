@@ -49,9 +49,6 @@
                     <li class="nav-item">
                         <a id="lnkContact" runat="server" class="nav-link" href="Contact.aspx">Contact</a>
                     </li>
-                    <li class="nav-item">
-                        <a id="lnkLogin" runat="server" class="nav-link" href="Login.aspx">Login</a>
-                    </li>
                 </ul>
             </div>
         </div>

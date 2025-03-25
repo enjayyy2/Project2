@@ -16,6 +16,7 @@
             align-items: center;
             height: 100vh;
         }
+
         .register-container {
             background-color: #1e1e1e;
             padding: 40px;
@@ -24,29 +25,35 @@
             text-align: center;
             width: 400px;
         }
+
         .form-control {
             background-color: transparent;
             border: 1px solid #007bff;
             color: white;
         }
-        .form-control::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-        .form-control:focus {
-            background-color: transparent;
-            color: white;
-            border-color: #00ff00;
-            box-shadow: none;
-        }
+
+            .form-control::placeholder {
+                color: rgba(255, 255, 255, 0.7);
+            }
+
+            .form-control:focus {
+                background-color: transparent;
+                color: white;
+                border-color: #00ff00;
+                box-shadow: none;
+            }
+
         .btn-register {
             background-color: transparent;
             border: 2px solid #00ff00;
             color: white;
         }
-        .btn-register:hover {
-            background-color: #00ff00;
-            color: black;
-        }
+
+            .btn-register:hover {
+                background-color: #00ff00;
+                color: black;
+            }
+
         .dropdown {
             background-color: transparent;
             color: white;
@@ -55,10 +62,12 @@
             padding: 8px;
             border-radius: 5px;
         }
-        .dropdown option {
-            background-color: #1e1e1e;
-            color: white;
-        }
+
+            .dropdown option {
+                background-color: #1e1e1e;
+                color: white;
+            }
+
         .show-password {
             display: flex;
             align-items: center;
@@ -67,9 +76,10 @@
             margin-top: 10px;
             cursor: pointer;
         }
-        .show-password input {
-            cursor: pointer;
-        }
+
+            .show-password input {
+                cursor: pointer;
+            }
     </style>
 </head>
 <body>
@@ -95,9 +105,7 @@
             </div>
             <div class="mb-3">
                 <asp:DropDownList ID="ddlAkses" runat="server" CssClass="dropdown">
-                    <asp:ListItem Text="Pilih Role" Value="" Selected="True" Disabled="True"></asp:ListItem>
-                    <asp:ListItem Text="Admin" Value="Admin"></asp:ListItem>
-                    <asp:ListItem Text="Kasir" Value="Cashier"></asp:ListItem>
+                    <asp:ListItem Text="User" Value="User" Selected="True"></asp:ListItem>
                 </asp:DropDownList>
             </div>
             <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="btn btn-register w-100" OnClientClick="return validateForm()" OnClick="btnRegister_Click" />
@@ -124,7 +132,7 @@
             var username = document.getElementById('<%= txtUsername.ClientID %>').value.trim();
             var email = document.getElementById('<%= txtEmail.ClientID %>').value.trim();
             var password = document.getElementById('<%= txtPassword.ClientID %>').value.trim();
-    var confirmPassword = document.getElementById('<%= txtConfirmPassword.ClientID %>').value.trim();
+            var confirmPassword = document.getElementById('<%= txtConfirmPassword.ClientID %>').value.trim();
             var role = document.getElementById('<%= ddlAkses.ClientID %>').value.trim();
 
             if (username === "" || email === "" || password === "" || confirmPassword === "" || role === "") {

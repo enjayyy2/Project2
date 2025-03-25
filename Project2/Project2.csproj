@@ -131,6 +131,7 @@
     <Content Include="Image\snapback.jpeg" />
     <Content Include="Image\sweatpants.jpeg" />
     <Content Include="Image\wllppr3.jpg" />
+    <Content Include="Kasir.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="Product1.aspx" />
@@ -227,6 +228,13 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Kasir.aspx.cs">
+      <DependentUpon>Kasir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Kasir.aspx.designer.cs">
+      <DependentUpon>Kasir.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -255,6 +263,7 @@
     <Compile Include="MasterPage2.master.designer.cs">
       <DependentUpon>MasterPage2.master</DependentUpon>
     </Compile>
+    <Compile Include="Model\DataTransaksi.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Product1.aspx.cs">
       <DependentUpon>Product1.aspx</DependentUpon>

@@ -52,9 +52,9 @@ namespace Project2
                                 {
                                     Response.Redirect("Kasir.aspx");
                                 }
-                                else if (role == "Owner")
+                                else if (role == "User")
                                 {
-                                    Response.Redirect("Owner.aspx");
+                                    Response.Redirect("Home.aspx");
                                 }
                                 else
                                 {

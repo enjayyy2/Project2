@@ -11,7 +11,16 @@ namespace Project2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // Cek apakah session "username" ada
+            if (Session["username"] == null)
+            {
+                Response.Redirect("Login.aspx"); // Redirect ke halaman login jika belum login
+            }
+            else
+            {
+                lblUsername.Text = "Welcome, " + Session["username"].ToString(); // Tampilkan username
+            }
         }
     }
+
 }
