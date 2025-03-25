@@ -199,6 +199,10 @@ namespace Project2
             }
         }
 
-
+        protected void GridViewProduk_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridViewProduk.PageIndex = e.NewPageIndex; // Ubah ke halaman yang dipilih
+            LoadProduk(); // Muat ulang data produk
+        }
     }
 }

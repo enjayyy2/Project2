@@ -2,8 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container mt-4">
-        <h2 class="text-center">
-            Manajemen Produk - <asp:Label ID="lblUsername" runat="server" CssClass="text-black"></asp:Label>
+        <h2 class="text-center">Manajemen Produk -
+            <asp:Label ID="lblUsername" runat="server" CssClass="text-black"></asp:Label>
             <a href="Logout.aspx" class="btn btn-danger">Logout</a>
         </h2>
 
@@ -42,19 +42,21 @@
             </div>
         </div>
 
-        <!-- GridView untuk Menampilkan Data Produk -->
+        <!-- GridView untuk Menampilkan Data Produk dengan Paging -->
         <asp:GridView ID="GridViewProduk" runat="server" CssClass="table table-bordered table-striped"
-            AutoGenerateColumns="False" OnRowCommand="GridViewProduk_RowCommand" OnSelectedIndexChanged="GridViewProduk_SelectedIndexChanged">
+            AutoGenerateColumns="False" AllowPaging="True" PageSize="10"
+            OnPageIndexChanging="GridViewProduk_PageIndexChanging"
+            OnRowCommand="GridViewProduk_RowCommand" OnSelectedIndexChanged="GridViewProduk_SelectedIndexChanged">
             <Columns>
                 <asp:BoundField DataField="ProductCode" HeaderText="Kode Produk" />
                 <asp:BoundField DataField="ProductName" HeaderText="Nama Produk" />
                 <asp:TemplateField HeaderText="Image">
                     <ItemTemplate>
-                    <asp:Image ID="imgProduct" runat="server" 
-                               ImageUrl='<%# Eval("ProductImage") %>' 
-                               Width="80px" Height="80px" 
-                               AlternateText="Gambar Produk" 
-                               onerror="this.onerror=null; this.src='/Images/default.png';" />
+                        <asp:Image ID="imgProduct" runat="server"
+                            ImageUrl='<%# Eval("ProductImage") %>'
+                            Width="80px" Height="80px"
+                            AlternateText="Gambar Produk"
+                            onerror="this.onerror=null; this.src='/Images/default.png';" />
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField DataField="ProductPrice" HeaderText="Harga" />
@@ -66,7 +68,9 @@
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
+            <PagerStyle CssClass="pagination-ys" />
         </asp:GridView>
+
 
         <!-- GridView untuk Menampilkan Data Transaksi -->
         <h3 class="mt-5">Riwayat Transaksi</h3>
